@@ -18,7 +18,7 @@ class TweetsControllerTest < ActionController::TestCase
 
   test "should create tweet" do
     assert_difference('Tweet.count') do
-      post :create, tweet: { content: @tweet.content, user_id: @tweet.user_id }
+      post :create, tweet: { body: @tweet.body, user_id: @tweet.user_id }
     end
 
     assert_redirected_to tweet_path(assigns(:tweet))
@@ -35,7 +35,7 @@ class TweetsControllerTest < ActionController::TestCase
   end
 
   test "should update tweet" do
-    patch :update, id: @tweet, tweet: { content: @tweet.content, user_id: @tweet.user_id }
+    patch :update, id: @tweet, tweet: { body: @tweet.body, user_id: @tweet.user_id }
     assert_redirected_to tweet_path(assigns(:tweet))
   end
 
